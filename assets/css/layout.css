@@ -1,0 +1,317 @@
+@import './fonts.css';
+@import './reset.css';
+@import './common.css';
+
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 100;
+}
+.header.on::before{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 182px;
+  background: #fff;
+  content: '';
+}
+.header .inner{
+  height: 64px;
+  max-width: 1920px;
+  display: flex;
+  align-items: center;
+}
+.header .logo a::before{
+  display: block;
+  background-position: -105px 0px;
+  width: 223px;
+  height: 35px;
+  content: '';
+}
+.header .gnb{
+  flex: 1;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+.header .gnb .gnb-list{display: flex;margin-left: 29px;}
+.header .gnb .gnb-item{position: relative;padding: 0 10px;}
+.header .gnb .gnb-item > a{display: flex;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header .gnb .gnb-item a span{position: relative;}
+.header .gnb .gnb-item a:hover span::after{
+  position: absolute;
+  bottom: 0;left: 0;
+  width: 100%;
+  height: 1px;
+  background: #000;
+  content: '';
+}
+
+.header .gnb .sub-list{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 182px;
+  white-space: nowrap;
+  background: #fff;
+}
+.header .gnb .sub-list.on{
+  display: flex;
+}
+.header .gnb .sub-list a{
+  padding: 3px 13px;
+  display: block;
+  line-height: 32px;
+  font-size: 17px;
+}
+
+/* footer */
+.footer{
+  position: relative;
+  background-color: #f2f2f2;
+  padding: 25px 104px 25px 98px;
+}
+.footer .inner{
+  position: static;
+  display: flex;
+  align-items: center;
+  max-width: 1920px;
+  padding: 0;
+}
+.footer .link-naver{
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 32px;
+  letter-spacing: -0.32px;
+  color: #000;
+}
+.footer .link-policy{
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  color: #909090;
+  margin-left: 30px;
+}
+.footer .relate-site{
+  position: relative;
+  margin-left: auto;
+  width: 280px;
+}
+.footer .relate-site .site-now{
+  position: relative;
+  width: 100%;
+  line-height: 42px;
+  text-align: left;
+  background-color: #f2f2f2;
+}
+.footer .relate-site .site-now.active{
+  padding: 0 12px;
+  background-color: #fff;
+}
+.footer .relate-site .site-now::before{
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 0;
+  background-position: -122px -93px;
+  width: 10px;
+  height: 6px;
+  z-index: 100;
+}
+.footer .relate-site .site-now.active::before{
+  transform:rotate(180deg);
+  margin-right: 12px;
+}
+.footer .relate-site .site-now::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #000;
+}
+.footer .relate-site .relate-list{
+  display: none;
+  position: absolute;
+  bottom: 42px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 1000;
+}
+.footer .relate-site .relate-list.on{
+  display: block;
+}
+.footer .relate-site .relate-item{
+  padding: 0 12px;
+  font-size: 18px;
+  line-height: 42px;
+}
+
+.btn-menu{display: none;}
+.side-nav{display: none;}
+
+/* 1280px ~ [1024] */
+@media (max-width:1280px) {
+  .header .inner{height: 60px;padding: 0 22px;}
+  .header .gnb{display: none;}
+  
+  .header .logo a::before { width: 160px; height: 23px; background-position: 0px 0px;}
+  .btn-menu{
+    display: block;
+    width: 40px;height: 40px;
+    margin-left: auto;
+  }
+  .btn-menu::before{
+    display: block;
+    margin: 0 auto;
+    background-position: -85px -28px;
+    width: 20px;
+    height: 14px;
+    content: '';
+  }
+  .btn-menu.on::before{
+    background-position: -85px -49px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .side-nav{
+    display: block;
+    visibility: hidden;
+    position: fixed;
+    right: -100%;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    background: #fff;
+    width: 100%;
+    z-index: 2;
+    transition: 0.3s;
+  }
+  .side-nav.show{
+    right: 0;
+    visibility: visible;
+  }
+
+  .side-nav .nav-list{
+    padding: 11px 0 9px;
+  }
+  .side-nav .nav-item{
+    font-family: "TTHoves", "NanumSquare", arial, sans-serif;
+    font-size: 22px;
+    line-height: 46px;
+    letter-spacing: -0.44px;
+  }
+  .side-nav .nav-item a{
+    position: relative;
+    display: block;
+    padding: 0 22px;
+  }
+  .side-nav .nav-item .arrow::after{
+    display: inline-block;
+    vertical-align: top;
+    margin: 23px 0 0 10px;
+    background-position: -136px -49px;
+    width: 10px;
+    height: 6px;
+    content: '';
+  }
+  .side-nav .nav-item .arrow.on::after{
+    transform: rotate(180deg);
+  }
+  .side-nav .sub-list{
+    display: none;
+  }
+  .side-nav .sub-list.show{
+    display: block;
+    padding: 3px 22px 15px;
+  }
+  .side-nav .sub-item{
+    margin-top: 13px;
+  }
+  .side-nav .sub-item a{
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.36px;
+    background-color: #fff;
+    font-weight: normal;
+  }
+  .side-nav .nav-item .arrow.on{
+    background: #f2f2f2;
+  }
+  .side-nav .nav-list:nth-child(2){
+    position: relative;
+  }
+  .side-nav .nav-list:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 22px;
+    right: 22px;
+    height: 1px;
+    background-color: #d0d0d0;
+  }
+  .side-nav .nav-list:nth-child(2)::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 22px;
+    right: 22px;
+    height: 1px;
+    background-color: #d0d0d0;
+  }
+
+  .footer { padding: 25px 22px 25px 22px; }
+}
+/* 1024px [768]px */
+@media (max-width:1023px) {
+  
+
+}
+/* 767px ~ [320px]*/
+@media (max-width:767px) {
+  .footer .inner{display: inherit;}
+  .footer .link-naver{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.3px;
+  }
+  .footer .link-policy{
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.28px;
+    color: #909090;
+    margin-left: 21px;
+  }
+  .footer .relate-site{
+    margin: 0;
+    width: 100%;
+  }
+  .footer .relate-site .site-now{
+    font-size: 12px;
+    margin-top: 15px;
+    color: #1d1d1d;
+  }
+  .footer .relate-site .relate-item{
+    font-size: 12px;
+    color: #1d1d1d; 
+  }
+  .footer .relate-site .site-now::after{
+    background: #b4b4b4;
+  }
+}

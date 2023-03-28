@@ -1,0 +1,67 @@
+.blind{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0,0,0,0);
+}
+.inner{
+  max-width: 1408px;
+  width: 100%;
+  padding: 0 126px;
+  margin: 0 auto;
+}
+
+.sc-apply .apply::after,
+.filter-list .ic-arrow,
+.chk-wrap .search-box .search,
+.footer .relate-site .site-now::before,
+[class*="sc-"] .navigation .btn.next::before,
+[class*="sc-"] .navigation .btn.prev::before,
+.sc-teams .teams-item .count::after,
+.sc-search .group-search::before,
+.header .logo a::before{
+  background: url(../images/sp-ic.png);
+  background-repeat: no-repeat;
+  background-size: 328px 205px;
+}
+
+
+
+/* 1280px ~ [1024] */
+@media (max-width:1280px) {
+ 
+  .btn-menu::before,
+  .btn-close,
+  .side-nav .nav-item .arrow::after,
+  .btn-menu.on::before,
+  .mb-search .ic-wrap .search,
+  .sc-teams .teams-item .count::after,
+  .header .logo a::before,
+  .btn-menu::before{
+    background: url(../images/sp-mo.png);
+    background-size: 195px 181px;
+  }
+  
+}
+/* 1024px [768]px */
+@media (max-width:1023px) {
+  .inner{
+    padding: 0 50px;
+    min-width: 320px;
+  }
+}
+/* 767px ~ [320px]*/
+@media (max-width:767px) {
+  
+  .inner{
+    padding: 0 22px;
+  }
+
+  .sc-apply .apply::after,
+  [class*="sc-"] .navigation .btn.prev::before{
+    background: url(../images/sp-mo.png);
+    background-size: 195px 181px;
+  }
+}
